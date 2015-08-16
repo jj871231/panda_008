@@ -15,7 +15,13 @@
       <scope>test</scope>
     </dependency>
     
-    
+    <!-- javax依赖包 -->    
+	<dependency>
+	  <groupId>javax</groupId>
+	  <artifactId>javaee-web-api</artifactId>
+	  <version>7.0</version>
+	  <scope>provided</scope>
+	</dependency>
     
     <!-- struts2依赖包 -->
     <dependency>
