@@ -17,16 +17,13 @@
 	<script src="js/jquery.cookie.js" type="text/javascript"></script>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     
-    
 
-    
-
-    <style type="text/css">
+<style type="text/css">
     body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #eee;
-}
+	}
 
 .form-signin {
   max-width: 330px;

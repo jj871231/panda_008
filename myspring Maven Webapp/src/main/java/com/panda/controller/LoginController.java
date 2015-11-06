@@ -14,7 +14,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import net.sf.json.JSONObject;
 
@@ -55,7 +54,6 @@ public class LoginController
     @ResponseBody
     public JSONObject login(User user,HttpServletRequest request)
     {
-        //user.setName("张三");
         Map<String, Object> resMap = userService.login(user);
         String error = (String)resMap.get("error");
         JSONObject json = new JSONObject();

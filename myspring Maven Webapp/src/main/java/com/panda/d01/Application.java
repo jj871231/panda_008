@@ -18,7 +18,6 @@ public class Application {
 		};
 	}
 
-	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		ApplicationContext context = new AnnotationConfigApplicationContext(
 				Application.class);

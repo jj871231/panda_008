@@ -21,17 +21,9 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 	@Override
 	public void saveUser(User user) {
 		// TODO Auto-generated method stub
-		/*
-		 * Session ss = getSession();
-		 * Transaction t = ss.beginTransaction();
-		 * ss.save(user);
-		 * t.commit();
-		 */
 		
 		getSession().save(user);
-		//getSession().flush();
-		//String sql = "insert into t_user values('123','张三')";
-		//jdbcTemplate.execute(sql);
+		
 	}
 
 	@Override
