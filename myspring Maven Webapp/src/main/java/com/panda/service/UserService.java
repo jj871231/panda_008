@@ -16,4 +16,6 @@ public interface UserService {
 	public void delUser(String id);
 
 	public void updateUser(User user);
+	
+	public Map<String, Object> login(User user);
 }

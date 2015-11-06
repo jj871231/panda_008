@@ -45,7 +45,7 @@ public class UserController {
     @ResponseBody
     public JSONObject saveUser(User user,HttpServletResponse response)
     {
-    	user.setName("张三");
+    	//user.setName("张三");
         userService.saveUser(user);
         JSONObject json = new JSONObject();
         json.put("success", "true");

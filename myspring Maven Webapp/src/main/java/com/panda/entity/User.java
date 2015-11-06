@@ -29,6 +29,9 @@ public class User implements Serializable {
 
 	@Column(name = "NAME")
 	private String name;
+	
+	@Column(name = "PASSWORD")
+	private String password; 
 
 	public String getId() {
 		return id;
@@ -45,5 +48,25 @@ public class User implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+    /**
+     * 获取 password
+     * @return 返回 password
+     */
+    public String getPassword()
+    {
+        return password;
+    }
+
+    /**
+     * 设置 password
+     * @param 对password进行赋值
+     */
+    public void setPassword(String password)
+    {
+        this.password = password;
+    }
+	
+	
 
 }

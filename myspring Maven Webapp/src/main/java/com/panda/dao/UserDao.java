@@ -17,4 +17,6 @@ public interface UserDao {
 	public int queryAllUserCount(Map<String, String> map);
 
 	public void updateUser(User user);
+	
+	public User getUserByParam(String name,String password);
 }
