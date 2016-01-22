@@ -11,8 +11,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="${ctx }userController/saveUser">
+<ul>
+<c:forEach items="${userList }" var="n">
+<li>${n.name }&nbsp;&nbsp;&nbsp;${n.content }</li>
+
+</c:forEach>
+</ul>
+<form action="${ctx }userController/saveUser" method="post">
 姓名：<input type="text" name="name">
+描述：<textarea name="content"></textarea>
 <input type="submit" value="提交">
 </form>
 </body>

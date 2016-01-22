@@ -29,6 +29,9 @@ public class User implements Serializable {
 
 	@Column(name = "NAME")
 	private String name;
+	
+	@Column(name = "CONTENT")
+	private String content;
 
 	public String getId() {
 		return id;
@@ -45,5 +48,15 @@ public class User implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+	
+	
 
 }

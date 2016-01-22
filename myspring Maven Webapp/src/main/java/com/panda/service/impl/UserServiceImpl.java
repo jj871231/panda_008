@@ -1,8 +1,7 @@
 package com.panda.service.impl;
 
+import java.util.List;
 import java.util.Map;
-
-import net.sf.json.JSONObject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,15 +23,15 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public JSONObject queryAllUser(Map<String, String> map) {
+	public List<User> queryAllUser(Map<String, String> map) {
 		// TODO Auto-generated method stub
-		return null;
+		return userDao.queryAllUser(map);
 	}
 
 	@Override
 	public User queryUserById(String id) {
 		// TODO Auto-generated method stub
-		return null;
+		return userDao.queryUserById(id);
 	}
 
 	@Override
