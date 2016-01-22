@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.panda.common.BaseDao;
 import com.panda.dao.UserDao;
+import com.panda.entity.BootPage;
 import com.panda.entity.User;
 
 @Repository
@@ -40,13 +41,13 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 		// TODO Auto-generated method stub
 		String hql = " from User where 1=1";
 		Query query = getSession().createQuery(hql);
-		query.setCacheable(true);
+		//query.setCacheable(true);
 		List<User> list = query.list();
 		
-		System.out.println(getSession().getSessionFactory().getStatistics().getSecondLevelCacheHitCount());
+		/*System.out.println(getSession().getSessionFactory().getStatistics().getSecondLevelCacheHitCount());
 		System.out.println(getSession().getSessionFactory().getStatistics().getSecondLevelCacheMissCount());
 		System.out.println(getSession().getSessionFactory().getStatistics().getSecondLevelCachePutCount());
-		
+		*/
 		
 		return list;
 	}
@@ -80,6 +81,32 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 	public void updateUser(User user) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public BootPage<User> getByPage(BootPage<User> pager,
+			Map<String, String> map) {
+		// TODO Auto-generated method stub
+		if (pager == null) {
+            throw new IllegalArgumentException("分页 不能为空!");
+        }
+		String hql = " from User where 1=1";
+		Query query = getSession().createQuery(hql);
+		query.setFirstResult(pager.getOffset());
+		query.setMaxResults(pager.getLimit());
+		List<User> list = query.list();
+		pager.setRows(list);
+		//pager.setTotal(this.countAll(hql, condition));
+	    return pager;
+	}
+
+	@Override
+	public Long getUserCount(Map<String, String> map) {
+		// TODO Auto-generated method stub
+		String hql = " select count(*) from User where 1=1";
+		Query query = getSession().createQuery(hql);
+		return (Long) query.uniqueResult();
 	}
 
 }

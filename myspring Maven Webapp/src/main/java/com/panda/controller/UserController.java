@@ -4,8 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import net.sf.json.JSONObject;
@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.panda.entity.BootPage;
 import com.panda.entity.User;
 import com.panda.service.UserService;
 
@@ -38,15 +39,25 @@ public class UserController {
     @RequestMapping(value = "/toUserList")
     public ModelAndView toUserList()
     {
-        Map<String, Object> map = new HashMap<String, Object>();
-        List<User> userList = userService.queryAllUser(new HashMap<String, String>());
-        map.put("userList", userList);
-        
+        //Map<String, Object> map = new HashMap<String, Object>();
+        //List<User> userList = userService.queryAllUser(new HashMap<String, String>());
+        //map.put("userList", userList);
         
         //User user = userService.queryUserById("123");
         
         //map.put("user", user);
-        return new ModelAndView("user/userList", map);
+        return new ModelAndView("user/userList");
+    }
+    
+    @RequestMapping(value = "/getUserList")
+    @ResponseBody
+    public JSONObject getUserList(HttpServletRequest request,BootPage<User> page){
+    	JSONObject json = new JSONObject();
+    	Long total = userService.getUserCount(new HashMap<String, String>());
+    	BootPage<User> pager = userService.getByPage(page, new HashMap<String, String>());
+    	pager.setTotal(total);
+    	json = JSONObject.fromObject(pager);
+    	return json;
     }
     
     @RequestMapping(value = "/saveUser",method=RequestMethod.POST)
