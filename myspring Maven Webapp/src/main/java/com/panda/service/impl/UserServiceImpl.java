@@ -1,17 +1,14 @@
 package com.panda.service.impl;
 
-<<<<<<< HEAD
 import java.util.List;
 import java.util.Map;
 
-=======
 import java.util.HashMap;
 import java.util.Map;
 
 import net.sf.json.JSONObject;
 
 import org.apache.commons.codec.digest.DigestUtils;
->>>>>>> origin/master
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -56,7 +53,6 @@ public class UserServiceImpl implements UserService {
 
 	}
 
-<<<<<<< HEAD
 	@Override
 	public BootPage<User> getByPage(BootPage<User> pager,
 			Map<String, String> map) {
@@ -69,7 +65,6 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return userDao.getUserCount(map);
 	}
-=======
     /**
      * 重载方法
      * @param user
@@ -97,6 +92,5 @@ public class UserServiceImpl implements UserService {
         
         return resMap;
     }
->>>>>>> origin/master
 
 }

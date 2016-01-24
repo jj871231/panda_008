@@ -18,12 +18,11 @@ public interface UserDao {
 	public int queryAllUserCount(Map<String, String> map);
 
 	public void updateUser(User user);
-	
-<<<<<<< HEAD
-	public BootPage<User> getByPage(BootPage<User> pager,Map<String, String> map);
-	
+
+	public BootPage<User> getByPage(BootPage<User> pager,
+			Map<String, String> map);
+
 	public Long getUserCount(Map<String, String> map);
-=======
-	public User getUserByParam(String name,String password);
->>>>>>> origin/master
+
+	public User getUserByParam(String name, String password);
 }
