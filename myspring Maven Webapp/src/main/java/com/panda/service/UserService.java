@@ -17,7 +17,11 @@ public interface UserService {
 
 	public void updateUser(User user);
 	
+<<<<<<< HEAD
 	public BootPage<User> getByPage(BootPage<User> pager,Map<String, String> map);
 	
 	public Long getUserCount(Map<String, String> map);
+=======
+	public Map<String, Object> login(User user);
+>>>>>>> origin/master
 }

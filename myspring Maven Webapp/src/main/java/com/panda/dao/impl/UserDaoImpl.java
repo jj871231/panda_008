@@ -22,17 +22,15 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 	@Override
 	public void saveUser(User user) {
 		// TODO Auto-generated method stub
-		/*
-		 * Session ss = getSession();
-		 * Transaction t = ss.beginTransaction();
-		 * ss.save(user);
-		 * t.commit();
-		 */
 		
 		getSession().save(user);
+<<<<<<< HEAD
 		//getSession().flush();
 		//String sql = "insert into t_user values('123','张三')";
 		//jdbcTemplate.execute(sql);
+=======
+		
+>>>>>>> origin/master
 	}
 
 	@SuppressWarnings("unchecked")
@@ -83,6 +81,7 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 
 	}
 
+<<<<<<< HEAD
 	@SuppressWarnings("unchecked")
 	@Override
 	public BootPage<User> getByPage(BootPage<User> pager,
@@ -108,5 +107,22 @@ public class UserDaoImpl extends BaseDao implements UserDao {
 		Query query = getSession().createQuery(hql);
 		return (Long) query.uniqueResult();
 	}
+=======
+    /**
+     * 重载方法
+     * @param user
+     * @return
+     */
+    @Override
+    public User getUserByParam(String name,String password)
+    {
+        // TODO Auto-generated method stub
+        String hql = " from User where name=? and password=?";
+        Query query = getSession().createQuery(hql);
+        query.setString(0, name);
+        query.setString(1, password);
+        return (User)query.uniqueResult();
+    }
+>>>>>>> origin/master
 
 }

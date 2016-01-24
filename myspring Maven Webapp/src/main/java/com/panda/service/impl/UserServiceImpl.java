@@ -1,8 +1,17 @@
 package com.panda.service.impl;
 
+<<<<<<< HEAD
 import java.util.List;
 import java.util.Map;
 
+=======
+import java.util.HashMap;
+import java.util.Map;
+
+import net.sf.json.JSONObject;
+
+import org.apache.commons.codec.digest.DigestUtils;
+>>>>>>> origin/master
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -47,6 +56,7 @@ public class UserServiceImpl implements UserService {
 
 	}
 
+<<<<<<< HEAD
 	@Override
 	public BootPage<User> getByPage(BootPage<User> pager,
 			Map<String, String> map) {
@@ -59,5 +69,34 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return userDao.getUserCount(map);
 	}
+=======
+    /**
+     * 重载方法
+     * @param user
+     * @return
+     */
+    @Override
+    public Map<String, Object> login(User user)
+    {
+        // TODO Auto-generated method stub
+        Map<String, Object> resMap = new HashMap<String, Object>();
+        String name = user.getName();
+        String password = user.getPassword();
+        String salted = password + "{" + name + "}";
+        System.out.println(salted);
+        password = DigestUtils.md5Hex(salted);
+        User loginUser = userDao.getUserByParam(name, password);
+        if (null != loginUser)
+        {
+            resMap.put("loginUser", loginUser);
+            resMap.put("error", "");
+        }
+        else {
+            resMap.put("error", "用户名或密码错误！");
+        }
+        
+        return resMap;
+    }
+>>>>>>> origin/master
 
 }

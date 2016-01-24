@@ -19,7 +19,11 @@ public interface UserDao {
 
 	public void updateUser(User user);
 	
+<<<<<<< HEAD
 	public BootPage<User> getByPage(BootPage<User> pager,Map<String, String> map);
 	
 	public Long getUserCount(Map<String, String> map);
+=======
+	public User getUserByParam(String name,String password);
+>>>>>>> origin/master
 }
