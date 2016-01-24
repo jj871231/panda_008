@@ -15,7 +15,7 @@
     <title>登陆页</title>
 	<script src="js/jquery.min.js" type="text/javascript"></script>
 	<script src="js/jquery.cookie.js" type="text/javascript"></script>
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     
 
 <style type="text/css">
