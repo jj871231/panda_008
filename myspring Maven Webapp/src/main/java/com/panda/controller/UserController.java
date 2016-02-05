@@ -48,12 +48,6 @@ public class UserController {
         return new ModelAndView("user/userList");
     }
     
-    @RequestMapping(value = "/toEditor")
-    public ModelAndView toEditor()
-    {
-        
-        return new ModelAndView("editor/editor");
-    }
     
     @RequestMapping(value = "/getUserList")
     @ResponseBody

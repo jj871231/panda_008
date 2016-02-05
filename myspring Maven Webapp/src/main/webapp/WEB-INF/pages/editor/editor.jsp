@@ -52,26 +52,25 @@ $(function(){
                 "print"
             ],
             imageBrowser: {
+            	
                 transport: {
-                	read: "/kendo-ui/service/ImageBrowser/Read",
+                	read: "${ctx}/uploadController/imageRead",
                     destroy: {
-                        url: "/kendo-ui/service/ImageBrowser/Destroy",
+                        url: "${ctx}/uploadController/destroy",
                         type: "POST"
                     },
                     create: {
-                        url: "/kendo-ui/service/ImageBrowser/Create",
+                        url: "${ctx}/uploadController/createDir",
                         type: "POST"
                     },
-                    thumbnailUrl: "/kendo-ui/service/ImageBrowser/Thumbnail",
-                    uploadUrl: "/kendo-ui/service/ImageBrowser/Upload",
-                    imageUrl: "/kendo-ui/service/ImageBrowser/Image?path={0}"
+                    thumbnailUrl:"${ctx}/uploadController/imageThumbnail",
+                    uploadUrl: "${ctx}/uploadController/imageUpload",
+                    imageUrl: "${ctx}/uploadController/getImage?path={0}"
 
                 }
              },
              fileBrowser: {
-                 messages: {
-                     dropFilesHere: "Drop files here"
-                 },
+                
                  transport: {
                      read: "/kendo-ui/service/FileBrowser/Read",
                      destroy: {

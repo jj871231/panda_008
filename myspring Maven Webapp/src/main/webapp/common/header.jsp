@@ -12,11 +12,14 @@
 <c:set var="url" value="http://${pageContext.request.serverName}:${pageContext.request.serverPort}" />
 <!-- Ztreev3.5 -->
 <link href="${ctx}/js/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="${ctx}/js/Font-Awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 <link href="${ctx}/js/bootstraptable/bootstrap-table.min.css" rel="stylesheet" type="text/css"/>
 <link href="${ctx}/js/kendo/styles/kendo.common-bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <link href="${ctx}/js/kendo/styles/kendo.bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
-
+<style>
+body,button, input, select, textarea,h1 ,h2, h3, h4, h5, h6 { font-family: Microsoft YaHei,'宋体' , Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;}
+</style>
 <script src="${ctx}/js/jquery/jquery.min.js" type="text/javascript"></script>
 <script src="${ctx}/js/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="${ctx}/js/bootstraptable/bootstrap-table.min.js" type="text/javascript"></script>
